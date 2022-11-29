@@ -18,7 +18,8 @@ use App\Http\Controllers\DashboardController;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('produk', [HomeController::class, 'index']);
-Route::get('login', [DashboardController::class, 'login']);
+Route::get('produk', [HomeController::class, 'index'])->name('daftar-produk');
+Route::get('produkdetail', [HomeController::class, 'detail'])->name('detail-produk');
+Route::get('login', [DashboardController::class, 'login'])->name('login-sistem');
 
-Route::get('admin', [DashboardController::class, 'index']);
+Route::get('admin', [DashboardController::class, 'index'])->name('menu-dashboard');

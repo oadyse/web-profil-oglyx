@@ -10,4 +10,9 @@ class HomeController extends Controller
     {
         return view('produk');
     }
+
+    public function detail()
+    {
+        return view('produk_detail');
+    }
 }

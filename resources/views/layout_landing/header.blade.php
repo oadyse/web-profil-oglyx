@@ -55,8 +55,8 @@
                     <li><a class="nav-link scrollto" href="#kerjasama">Kerjasama</a></li>
                     <li><a class="nav-link scrollto" href="#capaian">Capaian Prestasi</a></li>
                     <li><a class="nav-link scrollto {{ Request::is('produk') ? 'active' : '' }}"
-                            href="{{ url('produk') }}">Daftar Produk</a></li>
-                    <li><a class="nav-link scrollto bg-dark" href="{{ url('login') }}">Login</a></li>
+                            href="{{ route('daftar-produk') }}">Daftar Produk</a></li>
+                    <li><a class="nav-link scrollto bg-dark" href="{{ route('login-sistem') }}">Login</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
