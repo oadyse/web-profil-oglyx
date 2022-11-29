@@ -19,6 +19,10 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('produk', [HomeController::class, 'index']);
-Route::get('login', [DashboardController::class, 'login']);
+Route::get('logins', [DashboardController::class, 'login']);
 
 Route::get('admin', [DashboardController::class, 'index']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

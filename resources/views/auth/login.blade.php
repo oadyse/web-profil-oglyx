@@ -1,4 +1,7 @@
+@extends('layouts.app')
+
 @include('layout_dashboard.header')
+@section('content')
 
 <body class=" ">
 
@@ -14,12 +17,19 @@
                                     <img src="{{ asset('dashboard') }}/assets/images/Logo.png" class="img-fluid rounded-normal light-logo" alt="logo">
                                 </div>
                                 <h3 class="mb-3 font-weight-bold text-center">vLog In</h3>
-                                <form>
+                                <form method="POST" action="{{ route('login') }}">
+                                    @csrf
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label class="text-secondary">Email</label>
-                                                <input class="form-control" type="email" placeholder="Enter Email">
+                                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Enter Email" autofocus>
+
+                                                @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-lg-12 mt-2">
@@ -27,12 +37,18 @@
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <label class="text-secondary">Password</label>
                                                 </div>
-                                                <input class="form-control" type="password" placeholder="Enter Password">
+                                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Enter Password">
+
+                                                @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="{{ url('admin') }}" class="btn btn-primary btn-block mt-2">Log In
-                                    </a>
+                                    <button type="submit" class="btn btn-primary btn-block mt-2">Log In
+                                    </button>
                                 </form>
                             </div>
                         </div>
@@ -45,5 +61,6 @@
     @include('layout_dashboard.script')
 
 </body>
+@endsection
 
 </html>

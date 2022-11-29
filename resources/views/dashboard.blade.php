@@ -1,3 +1,4 @@
+@if(!empty(Auth::user()->name))
 @include('layout_dashboard.header')
 
 <body class="  ">
@@ -14,23 +15,37 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto navbar-list align-items-center">
                             <li class="nav-item nav-icon dropdown">
-                                <a href="#" class="nav-item nav-icon dropdown-toggle pr-0 search-toggle"
-                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    <img src="{{ asset('dashboard') }}/assets/images/user/1.jpg"
-                                        class="img-fluid avatar-rounded" alt="user">
-                                    <span class="mb-0 ml-2 user-name">Admin</span>
+                                <a href="#" class="nav-item nav-icon dropdown-toggle pr-0 search-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="{{ asset('dashboard') }}/assets/images/user/1.jpg" class="img-fluid avatar-rounded" alt="user">
+                                    <span class="mb-0 ml-2 user-name"> {{ Auth::user()->name }}</span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                    <li class="dropdown-item  d-flex svg-icon">
-                                        <svg class="svg-icon mr-0 text-secondary" id="h-05-p" width="20"
-                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                                        </svg>
-                                        <a href="{{ url('/') }}">Logout</a>
+
+                                    <!-- Authentication Links -->
+                                    @guest
+                                    @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                     </li>
+                                    @endif
+
+                                    @if (Route::has('register'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    </li>
+                                    @endif
+                                    @else
+                                    <li class="nav-item dropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li>
+                                    @endguest
                                 </ul>
                             </li>
                         </ul>
@@ -87,3 +102,4 @@
 </body>
 
 </html>
+@endif

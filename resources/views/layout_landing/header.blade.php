@@ -14,9 +14,7 @@
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -44,8 +42,7 @@
         <div class="container d-flex align-items-center justify-content-between">
 
             <div class="logo">
-                <h1 class="text-light"><a href="index.html"><span><img src="assets/img/Logo.png" alt=""
-                                class="img-fluid">&nbsp; UD. Oglyx Pandiga</span></a></h1>
+                <h1 class="text-light"><a href="index.html"><span><img src="assets/img/Logo.png" alt="" class="img-fluid">&nbsp; UD. Oglyx Pandiga</span></a></h1>
             </div>
 
             <nav id="navbar" class="navbar">
@@ -54,9 +51,13 @@
                     </li>
                     <li><a class="nav-link scrollto" href="#kerjasama">Kerjasama</a></li>
                     <li><a class="nav-link scrollto" href="#capaian">Capaian Prestasi</a></li>
-                    <li><a class="nav-link scrollto {{ Request::is('produk') ? 'active' : '' }}"
-                            href="{{ url('produk') }}">Daftar Produk</a></li>
+                    <li><a class="nav-link scrollto {{ Request::is('produk') ? 'active' : '' }}" href="{{ url('produk') }}">Daftar Produk</a></li>
+                    @if(empty(Auth::user()->name))
                     <li><a class="nav-link scrollto bg-dark" href="{{ url('login') }}">Login</a></li>
+                    @endif
+                    @if(!empty(Auth::user()->name))
+                    <li><a class="nav-link scrollto bg-dark" href="{{ url('admin') }}">Dashboard</a></li>
+                    @endif
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
