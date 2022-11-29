@@ -55,8 +55,13 @@
                     <li><a class="nav-link scrollto" href="#kerjasama">Kerjasama</a></li>
                     <li><a class="nav-link scrollto" href="#capaian">Capaian Prestasi</a></li>
                     <li><a class="nav-link scrollto {{ Request::is('produk') ? 'active' : '' }}"
-                            href="{{ route('daftar-produk') }}">Daftar Produk</a></li>
-                    <li><a class="nav-link scrollto bg-dark" href="{{ route('login-sistem') }}">Login</a></li>
+                            href="{{ url('produk') }}">Daftar Produk</a></li>
+                    @if (empty(Auth::user()->name))
+                        <li><a class="nav-link scrollto bg-dark" href="{{ route('login-sistem') }}">Login</a></li>
+                    @endif
+                    @if (!empty(Auth::user()->name))
+                        <li><a class="nav-link scrollto bg-dark" href="{{ route('menu-dashboard') }}">Dashboard</a></li>
+                    @endif
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->

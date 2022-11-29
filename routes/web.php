@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
@@ -23,3 +24,7 @@ Route::get('produkdetail', [HomeController::class, 'detail'])->name('detail-prod
 Route::get('login', [DashboardController::class, 'login'])->name('login-sistem');
 
 Route::get('admin', [DashboardController::class, 'index'])->name('menu-dashboard');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
