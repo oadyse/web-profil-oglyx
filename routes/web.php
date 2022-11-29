@@ -24,5 +24,6 @@ Route::get('produkdetail', [HomeController::class, 'detail'])->name('detail-prod
 Route::get('login', [HomeController::class, 'login'])->name('login-sistem');
 
 Auth::routes();
-
-Route::get('admin', [DashboardController::class, 'index'])->name('menu-dashboard');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('admin', [DashboardController::class, 'index'])->name('menu-dashboard');
+});
