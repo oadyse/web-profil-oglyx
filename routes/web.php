@@ -21,10 +21,8 @@ Route::get('/', function () {
 });
 Route::get('produk', [HomeController::class, 'index'])->name('daftar-produk');
 Route::get('produkdetail', [HomeController::class, 'detail'])->name('detail-produk');
-Route::get('login', [DashboardController::class, 'login'])->name('login-sistem');
-
-Route::get('admin', [DashboardController::class, 'index'])->name('menu-dashboard');
+Route::get('login', [HomeController::class, 'login'])->name('login-sistem');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('admin', [DashboardController::class, 'index'])->name('menu-dashboard');

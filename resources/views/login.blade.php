@@ -15,7 +15,7 @@
                                     <img src="{{ asset('dashboard') }}/assets/images/Logo.png"
                                         class="img-fluid rounded-normal light-logo" alt="logo">
                                 </div>
-                                <h3 class="mb-3 font-weight-bold text-center">vLog In</h3>
+                                <h3 class="mb-3 font-weight-bold text-center">Log In</h3>
                                 <form>
                                     <div class="row">
                                         <div class="col-lg-12">

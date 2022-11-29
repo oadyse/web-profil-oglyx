@@ -1,3 +1,4 @@
+<script src="{{ asset('dashboard') }}/assets/js/backend-bundle.min.js"></script>
 <!-- Backend Bundle JavaScript -->
 <script src="{{ asset('dashboard') }}/assets/js/backend-bundle.min.js"></script>
 <!-- Chart Custom JavaScript -->
