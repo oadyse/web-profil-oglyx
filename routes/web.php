@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\pesananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +21,14 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('produk', [HomeController::class, 'index'])->name('daftar-produk');
-Route::get('produkdetail', [HomeController::class, 'detail'])->name('detail-produk');
+Route::get('produkdetail/{id}', [HomeController::class, 'detail'])->name('detail-produk');
 Route::get('login', [HomeController::class, 'login'])->name('login-sistem');
+Route::post('tambah_pesanan', [pesananController::class, 'addPesanan']);
 
-Auth::routes();
+Auth::routes([
+    'register' => false,
+]);
 Route::group(['middleware' => 'auth'], function () {
     Route::get('admin', [DashboardController::class, 'index'])->name('menu-dashboard');
+    Route::get('detail/{id}', [DashboardController::class, 'detail']);
 });

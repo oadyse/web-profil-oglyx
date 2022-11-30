@@ -76,32 +76,34 @@
                                     <table id="datatable-1" class="table data-table table-striped table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>No.</th>
-                                                <th>Pemesan</th>
-                                                <th>Order</th>
+                                                <th>Produk</th>
+                                                <th>Total</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($orders as $order)
-                                                <tr>
-                                                    <td></td>
-                                                    <td>
+
+                                            <tr>
+                                                <td>
+                                                    @foreach ($details as $detail)
                                                         <ul>
-                                                            <li>{{ $order->nama }}</li>
-                                                            <li>{{ $order->no_wa }}</li>
-                                                            <li>{{ $order->alamat }}</li>
+                                                            <li>
+                                                                {{ $detail->nama }}
+                                                            </li>
                                                         </ul>
-                                                    </td>
+                                                    @endforeach
+                                                </td>
+                                                <td>
+                                                    @foreach ($totals as $total)
+                                                        <ul>
+                                                            <li>
+                                                                {{ $total->total }}
+                                                            </li>
+                                                        </ul>
+                                                    @endforeach
+                                                </td>
+                                            </tr>
 
-                                                    <td>
-                                                        <a class="btn btn-success" href="/detail/{{ $order->id }}">
-                                                            Detail Pesanan
-                                                        </a>
 
-                                                    </td>
-
-                                                </tr>
-                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

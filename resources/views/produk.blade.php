@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="col-12 text-center mb-5">
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#pemesanan">
+                    <button type="button" class="btn btn-success" onclick="modalPesanan()">
                         Pesan Produk
                     </button>
                 </div>
@@ -37,22 +37,33 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form>
+                                <form id="form-pesanan" enctype="multipart/form-data">
+                                    {{ csrf_field() }}
                                     <div class="mb-3">
                                         <label class="form-label">Nama</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="nama" id="nama" class="form-control"
+                                            required>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Nomor (WhatsApp)</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="no_wa" class="form-control" required>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Alamat</label>
-                                        <textarea class="form-control" rows="3"></textarea>
+                                        <textarea class="form-control" name="alamat" rows="3" required></textarea>
                                     </div>
+                                    @foreach ($produks as $produk)
+                                        <div class="mb-3">
+                                            <label class="form-label">{{ $produk->nama }}</label>
+                                            <input type="hidden" name="id_produk[]" value="{{ $produk->id }}" />
+                                            <input type="number" id="total" min="0" name="total[]"
+                                                class="form-control">
+                                        </div>
+                                    @endforeach
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary">Lakukan Pemesanan</button>
+                                <button type="submit" class="btn btn-primary">Lakukan
+                                    Pemesanan</button>
                             </div>
                             </form>
                         </div>
@@ -72,20 +83,22 @@
             </div>
 
             <div class="row portfolio-container" data-aos="fade-up">
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-links">
-                            <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox" title="a">
-                                <i class="bx bx-plus"></i>
-                            </a>
-                            <a href="{{ route('detail-produk') }}" title="More Details"><i class="bx bx-link"></i></a>
+                @foreach ($produks as $produk)
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <img src="assets/img/gambarproduk/{{ $produk->gambar }}" class="img-fluid"
+                                alt="{{ $produk->nama }}">
+                            <div class="portfolio-links">
+                                <a href="assets/img/gambarproduk/{{ $produk->gambar }}" data-gallery="portfolioGallery"
+                                    class="portfolio-lightbox" title="{{ $produk->nama }}">
+                                    <i class="bx bx-plus"></i>
+                                </a>
+                                <a href="{{ route('detail-produk', $produk->id) }}" title="More Details"><i
+                                        class="bx bx-link"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-
+                @endforeach
             </div>
 
         </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\M_produk;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -9,7 +10,10 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('produk');
+        $data = [
+            'produks' => M_produk::all(),
+        ];
+        return view('produk', $data);
     }
 
     public function login()
@@ -17,8 +21,11 @@ class HomeController extends Controller
         return view('login');
     }
 
-    public function detail()
+    public function detail($id)
     {
-        return view('produk_detail');
+        $data = [
+            'produk' => M_produk::where('id', $id)->first(),
+        ];
+        return view('produk_detail', $data);
     }
 }

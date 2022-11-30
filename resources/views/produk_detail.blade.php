@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/Logo.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="{{ asset('assets') }}/img/Logo.png" rel="icon">
+    <link href="{{ asset('assets') }}/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -19,15 +19,15 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/vendor/aos/aos.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/css/style.css" rel="stylesheet">
 
     <!-- =======================================================
   * Template Name: Squadfree - v4.7.0
@@ -44,8 +44,8 @@
         <div class="container d-flex align-items-center justify-content-between">
 
             <div class="logo">
-                <h1 class="text-light"><a href="index.html"><span><img src="assets/img/Logo.png" alt=""
-                                class="img-fluid">&nbsp; UD. Oglyx Pandiga</span></a></h1>
+                <h1 class="text-light"><a href="index.html"><span><img src="{{ asset('assets') }}/img/Logo.png"
+                                alt="" class="img-fluid">&nbsp; UD. Oglyx Pandiga</span></a></h1>
             </div>
 
             <nav id="navbar" class="navbar">
@@ -56,7 +56,7 @@
                     <li><a class="nav-link scrollto" href="#capaian">Capaian Prestasi</a></li>
                     <li><a class="nav-link scrollto {{ Request::is('produkdetail') ? 'active' : '' }}"
                             href="{{ route('daftar-produk') }}">Daftar Produk</a></li>
-                    <li><a class="nav-link scrollto bg-dark" href="{{ route('login-sistem') }}">Login</a></li>
+                    <li><a class="nav-link scrollto bg-dark" href="{{ route('login') }}">Login</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -71,11 +71,11 @@
             <div class="container">
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <h2>Nama Produk</h2>
+                    <h2>{{ $produk->nama }}</h2>
                     <ol>
                         <li><a href="{{ url('/') }}">Home</a></li>
                         <li><a href="{{ route('daftar-produk') }}">Daftar Produk</a></li>
-                        <li>Nama Produk</li>
+                        <li>{{ $produk->nama }}</li>
                     </ol>
                 </div>
 
@@ -93,16 +93,10 @@
                             <div class="swiper-wrapper align-items-center">
 
                                 <div class="swiper-slide">
-                                    <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
+                                    <img src="{{ asset('assets') }}/img/gambarproduk/{{ $produk->gambar }}"
+                                        alt="">
                                 </div>
 
-                                <div class="swiper-slide">
-                                    <img src="assets/img/portfolio/portfolio-2.jpg" alt="">
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <img src="assets/img/portfolio/portfolio-3.jpg" alt="">
-                                </div>
 
                             </div>
                             <div class="swiper-pagination"></div>
@@ -111,20 +105,13 @@
 
                     <div class="col-lg-4">
                         <div class="portfolio-info">
-                            <h3>Nama Produk</h3>
-                            <ul>
-                                <li><strong>Category</strong>: Web design</li>
-                                <li><strong>Client</strong>: ASU Company</li>
-                                <li><strong>Project date</strong>: 01 March, 2020</li>
-                            </ul>
+                            <h3>{{ $produk->nama }}</h3>
+
                         </div>
                         <div class="portfolio-description">
                             <h2>Deskripsi Produk</h2>
                             <p>
-                                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi
-                                labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque
-                                itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur
-                                dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                                {{ $produk->deskripsi }}
                             </p>
                         </div>
                     </div>
