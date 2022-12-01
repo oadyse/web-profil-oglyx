@@ -97,9 +97,7 @@
                                                         <a class="btn btn-success" href="/detail/{{ $order->id }}">
                                                             Detail Pesanan
                                                         </a>
-
                                                     </td>
-
                                                 </tr>
                                             @endforeach
                                         </tbody>
