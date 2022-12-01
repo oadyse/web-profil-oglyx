@@ -66,6 +66,7 @@
                                                             ({{ 'Rp ' . number_format($produk->harga, 0, ',', '.') . '/ton' }})
                                                         </span>
                                                     </small>
+                                                    <input type="hidden" name="harga[]" value="{{ $produk->harga }}" />
                                                 </label>
                                             </div>
                                             <div class="col-2 text-center">

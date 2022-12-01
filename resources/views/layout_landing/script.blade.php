@@ -8,7 +8,8 @@
 <script src="{{ asset('assets') }}/vendor/php-email-form/validate.js"></script>
 
 {{-- Sweet Alert --}}
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+{{-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> --}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- Template Main JS File -->
 <script src="{{ asset('assets') }}/js/main.js"></script>
@@ -30,11 +31,12 @@
             method: "POST",
             data: form.serialize(),
             success: function(response) {
-                if (response === true) {
+                if (response != null) {
                     $('#pemesanan').modal('hide')
-                    successNotify()
+                    successNotify(response)
                     $('#form-pesanan')[0].reset()
                 }
+                // cosole.log(response)
             },
             error: function(e) {
                 alert('Something wrong!')
@@ -42,10 +44,11 @@
         })
     }
 
-    function successNotify() {
+    function successNotify(res) {
+        var nilai = new Intl.NumberFormat(['ban', 'id']).format(res);
         Swal.fire({
             icon: 'success',
-            title: "{{ session('success') }}",
+            title: "Total Harga Rp" + nilai,
             showConfirmButton: false,
             timer: 1500
         })

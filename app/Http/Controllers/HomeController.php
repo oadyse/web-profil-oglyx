@@ -13,6 +13,7 @@ class HomeController extends Controller
         $data = [
             'produks' => M_produk::all(),
         ];
+        // $data['produks'];
         return view('produk', $data);
     }
 
