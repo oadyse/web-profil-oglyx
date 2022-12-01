@@ -7,6 +7,9 @@
 <script src="{{ asset('assets') }}/vendor/swiper/swiper-bundle.min.js"></script>
 <script src="{{ asset('assets') }}/vendor/php-email-form/validate.js"></script>
 
+{{-- Sweet Alert --}}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <!-- Template Main JS File -->
 <script src="{{ asset('assets') }}/js/main.js"></script>
 <script type="text/javascript">
@@ -21,7 +24,7 @@
 
     function tambahPesanan() {
         let form = $('#form-pesanan');
-        const url = "{{ url('tambah_pesanan') }}";
+        const url = '{{ url('tambah_pesanan') }}';
         $.ajax({
             url,
             method: "POST",
@@ -29,12 +32,22 @@
             success: function(response) {
                 if (response === true) {
                     $('#pemesanan').modal('hide')
+                    successNotify()
                     $('#form-pesanan')[0].reset()
                 }
             },
             error: function(e) {
                 alert('Something wrong!')
             }
+        })
+    }
+
+    function successNotify() {
+        Swal.fire({
+            icon: 'success',
+            title: "{{ session('success') }}",
+            showConfirmButton: false,
+            timer: 1500
         })
     }
 </script>
