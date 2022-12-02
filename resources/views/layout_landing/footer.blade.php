@@ -3,7 +3,7 @@
     <div class="footer-top">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6" id="about">
+                <div class="col-lg-4 col-md-6">
                     <div class="footer-info">
                         <h3>UD. Oglyx Pandiga</h3>
                         <p class="pb-3"><em>Oglyx Pandiga adalah usaha dagang dibidang hasil tani yang bertempat di

@@ -49,22 +49,7 @@
                                 alt="" class="img-fluid">&nbsp; UD. Oglyx Pandiga</span></a></h1>
             </div>
 
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link scrollto" href="{{ url('/') }}">Beranda</a>
-                    </li>
-                    <li><a class="nav-link scrollto" href="#kerjasama">Kerjasama</a></li>
-                    <li><a class="nav-link scrollto" href="#capaian">Capaian Prestasi</a></li>
-                    <li><a class="nav-link scrollto {{ Request::is('produk') ? 'active' : '' }}"
-                            href="{{ route('daftar-produk') }}">Daftar Produk</a></li>
-                    @if (empty(Auth::user()->name))
-                        <li><a class="nav-link scrollto bg-dark" href="{{ url('login') }}">Login</a></li>
-                    @else
-                        <li><a class="nav-link scrollto bg-dark" href="{{ url('admin') }}">Dashboard</a></li>
-                    @endif
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
+            @include('layout_landing.nav')
 
         </div>
     </header><!-- End Header -->

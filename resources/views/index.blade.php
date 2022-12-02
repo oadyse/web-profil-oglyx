@@ -60,7 +60,7 @@
     </section><!-- End About Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
+    <section id="kerjasama" class="testimonials section-bg">
         <div class="container">
 
             <div class="section-title mb-5" data-aos="fade-in" data-aos-delay="100">
