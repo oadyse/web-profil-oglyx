@@ -18,38 +18,29 @@
             <div class="row no-gutters">
                 <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="content">
-                        <h3>Voluptatem dignissimos provident quasi</h3>
+                        <h3>Visi</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                            Menjadi perusahaan pertanian bawang merah yang berkualitas, inovatif, dan terbaik di
+                            Indonesia.
                         </p>
-                        <a href="#" class="about-btn">About us <i class="bx bx-chevron-right"></i></a>
                     </div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-stretch">
                     <div class="icon-boxes d-flex flex-column justify-content-center">
                         <div class="row">
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                                <i class="bx bx-receipt"></i>
-                                <h4>Corporis voluptates sit</h4>
-                                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip
+                            <div class="col-md-12 icon-box" data-aos="fade-up" data-aos-delay="100">
+                                <h3>Misi</h3>
+                                <p>keberadaan kami senantiasa memberikan solusi terhadap kualitas dan pasokan bawang
+                                    merah dengan menanam dengan benih dan bibit yang berkualitas agar dapat menghasilkan
+                                    bawang merah yang terbaik serta dapat meningkatkan perekonomian khusunya di
+                                    Kabupaten Nganjuk.
                                 </p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                                <i class="bx bx-cube-alt"></i>
-                                <h4>Ullamco laboris nisi</h4>
-                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                            <div class="col-md-12 icon-box mt-1" data-aos="fade-up" data-aos-delay="100">
+                                <p>Oglyx Pandiga senantiasa mengembangkan cara bercocok tanam untuk mengatasi ancaman
+                                    yang dapat mengganggu pertumbuhan bawang merah serta menjaga bibit bawang merah agar
+                                    tetap tumbuh secara organik untuk mendapatkan kualitas terbaik.
                                 </p>
-                            </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                                <i class="bx bx-images"></i>
-                                <h4>Labore consequatur</h4>
-                                <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-                            </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                                <i class="bx bx-shield"></i>
-                                <h4>Beatae veritatis</h4>
-                                <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
                             </div>
                         </div>
                     </div><!-- End .content-->
