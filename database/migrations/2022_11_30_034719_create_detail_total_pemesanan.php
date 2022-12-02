@@ -17,6 +17,7 @@ class CreateDetailTotalPemesanan extends Migration
             $table->id();
             $table->integer('id_pemesanan');
             $table->integer('total');
+            $table->biginteger('harga');
         });
     }
 

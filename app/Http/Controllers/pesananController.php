@@ -11,8 +11,10 @@ class pesananController extends Controller
 {
     public function addPesanan(Request $request)
     {
+        // dd(request()->all());
         $id_produk = $request->get('id_produk');
         $total = $request->get('total');
+        $harga = $request->get('harga');
 
         $data = new M_pemesanan();
         $data->nama = $request->get('nama');
@@ -26,19 +28,27 @@ class pesananController extends Controller
                 'id_produk' => $produk
             ]);
         }
+        $tot = 0;
+        foreach ($total as $t => $key) {
+            foreach ($harga as $h => $val) {
+                if ($t == $h) {
+                    if ($key == null) {
+                        $key = 0;
+                    } else {
+                        $key = $key;
+                    }
+                    $total_harga = $key * $val;
+                    $tot += $total_harga;
 
-        foreach ($total as $t) {
-            if ($t == null) {
-                $t = 0;
-            } else {
-                $t = $t;
+                    M_detailTotalPemesanan::create([
+                        'id_pemesanan' => $data->id,
+                        'total' => $key,
+                        'harga' => $total_harga
+                    ]);
+                }
             }
-            M_detailTotalPemesanan::create([
-                'id_pemesanan' => $data->id,
-                'total' => $t
-            ]);
         }
-
-        return response()->json(true);
+        // dd($tot);
+        return response()->json($tot);
     }
 }
