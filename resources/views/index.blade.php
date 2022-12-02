@@ -30,7 +30,7 @@
                         <div class="row">
                             <div class="col-md-12 icon-box" data-aos="fade-up" data-aos-delay="100">
                                 <h3>Misi</h3>
-                                <p>keberadaan kami senantiasa memberikan solusi terhadap kualitas dan pasokan bawang
+                                <p>Keberadaan kami senantiasa memberikan solusi terhadap kualitas dan pasokan bawang
                                     merah dengan menanam dengan benih dan bibit yang berkualitas agar dapat menghasilkan
                                     bawang merah yang terbaik serta dapat meningkatkan perekonomian khusunya di
                                     Kabupaten Nganjuk.
