@@ -22,7 +22,6 @@ Route::get('/', function () {
 });
 Route::get('produk', [HomeController::class, 'index'])->name('daftar-produk');
 Route::get('produkdetail/{id}', [HomeController::class, 'detail'])->name('detail-produk');
-Route::get('login', [HomeController::class, 'login'])->name('login-sistem');
 Route::post('tambah_pesanan', [pesananController::class, 'addPesanan']);
 
 Auth::routes([

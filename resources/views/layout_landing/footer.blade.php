@@ -3,7 +3,7 @@
     <div class="footer-top">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6" id="about">
+                <div class="col-lg-4 col-md-6">
                     <div class="footer-info">
                         <h3>UD. Oglyx Pandiga</h3>
                         <p class="pb-3"><em>Oglyx Pandiga adalah usaha dagang dibidang hasil tani yang bertempat di
@@ -21,7 +21,12 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="col-lg-8 col-md-6 ml-5" style="margin-top: -8%">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15821.108305767095!2d111.8612055!3d-7.544733!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e783533d78d40ad%3A0xb2d4feb828611121!2sDapino_dapurino!5e0!3m2!1sen!2sid!4v1669985036289!5m2!1sen!2sid"
+                        width="740" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
         </div>
     </div>

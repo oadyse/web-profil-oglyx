@@ -76,30 +76,35 @@
                                     <table id="datatable-1" class="table data-table table-striped table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>No.</th>
+                                                <th width="5%">No.</th>
                                                 <th>Pemesan</th>
                                                 <th>Order</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($orders as $order)
-                                                <tr>
-                                                    <td></td>
-                                                    <td>
-                                                        <ul>
-                                                            <li>{{ $order->nama }}</li>
-                                                            <li>{{ $order->no_wa }}</li>
-                                                            <li>{{ $order->alamat }}</li>
-                                                        </ul>
-                                                    </td>
-
-                                                    <td>
-                                                        <a class="btn btn-success" href="/detail/{{ $order->id }}">
-                                                            Detail Pesanan
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
+                                            <?php
+                                            $no = 1;
+                                            foreach ($orders as $order){
+                                            ?>
+                                            <tr>
+                                                <td class="text-center">{{ $no }}.</td>
+                                                <td>
+                                                    <ul>
+                                                        <li>{{ 'Nama           : ' . $order->nama }}</li>
+                                                        <li>{{ 'Nomor WhatsApp : ' . $order->no_wa }}</li>
+                                                        <li>{{ 'Alamat         : ' . $order->alamat }}</li>
+                                                    </ul>
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-success" href="/detail/{{ $order->id }}">
+                                                        Detail Pesanan
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <?php 
+                                            $no += 1;
+                                            }
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>
