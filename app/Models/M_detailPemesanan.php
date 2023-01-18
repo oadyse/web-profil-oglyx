@@ -14,22 +14,17 @@ class M_detailPemesanan extends Model
     protected $guarded = [];
     public $timestamps = false;
 
-    public function pemesanan()
-    {
-        return $this->hasOne(M_pemesanan::class, 'id_pemesanan', 'id');
-    }
-
     public function produk()
     {
-        return $this->hasOne(M_produk::class, 'id_produk', 'id');
+        return $this->hasOne(M_produk::class, 'id', 'id_produk');
     }
 
     public static function getDetail($id)
     {
         return DB::table('detail_pemesanan')
-            ->select('nama')
+            ->select('nama', 'harga')
             ->join('produk', 'produk.id', '=', 'detail_pemesanan.id_produk')
-            ->groupBy('detail_pemesanan.id_pemesanan', 'produk.nama')
+            ->groupBy('detail_pemesanan.id_pemesanan', 'produk.nama', 'produk.harga')
             ->where('detail_pemesanan.id_pemesanan', $id)
             ->get();
     }

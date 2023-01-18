@@ -17,9 +17,12 @@ class pesananController extends Controller
         $harga = $request->get('harga');
 
         $data = new M_pemesanan();
+        $data->no_order = $request->get('no_order');
         $data->nama = $request->get('nama');
         $data->no_wa = $request->get('no_wa');
         $data->alamat = $request->get('alamat');
+        $data->status = 'Belum Proses';
+        $data->created_at = date(now());
         $data->save();
 
         foreach ($id_produk as $produk) {
@@ -49,6 +52,6 @@ class pesananController extends Controller
             }
         }
         // dd($tot);
-        return response()->json($tot);
+        return response()->json(['tot' => $tot, 'order' => $data->no_order]);
     }
 }

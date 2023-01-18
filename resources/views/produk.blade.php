@@ -17,18 +17,19 @@
             <div class="section-title" data-aos="fade-in" data-aos-delay="100">
                 <h2>Daftar Produk</h2>
             </div>
-
             <div class="row">
                 <div class="col-12 text-center mb-5">
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-success" onclick="modalPesanan()">
                         Pesan Produk
                     </button>
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#form_search">
+                        Cek Pesanan
+                    </button>
                 </div>
 
-                <!-- Modal -->
-                <div class="modal fade" id="pemesanan" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
+                <!-- Modal Create-->
+                <div class="modal fade" id="pemesanan" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-scrollable">
                         <div class="modal-content">
                             <div class="modal-header text-center bg-success text-light">
@@ -47,6 +48,8 @@
                                     <div class="mb-3">
                                         <label class="form-label">Nomor (WhatsApp)</label>
                                         <input type="text" name="no_wa" class="form-control" required>
+                                        <input type="hidden" name="no_order" class="form-control"
+                                            value="{{ 'OP-BW' . rand(10000, 99999) }}">
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Alamat</label>
@@ -88,8 +91,31 @@
                         </div>
                     </div>
                 </div>
+                <!-- Modal Search-->
+                <div class="modal fade" id="form_search" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header text-center bg-warning text-light">
+                                <h5 class="modal-title" id="exampleModalLabel">Masukkan Nomor pesanan</h5>
+                                <button type="button" class="btn-close text-light" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Start kode untuk form pencarian -->
+                                <form class="form" action="{{ route('search') }}" method="get">
+                                    <div class="form-group">
+                                        <input type="text" name="search" class="form-control" id="search"
+                                            placeholder="Masukkan no-order" value="{{ old('search') }}">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary">Cari</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
             <div class="row" data-aos="fade-in">
                 <div class="col-lg-12 d-flex justify-content-center">
                     <ul id="portfolio-flters">

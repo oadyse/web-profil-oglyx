@@ -44,13 +44,14 @@
         })
     }
 
-    function successNotify(res) {
-        var nilai = new Intl.NumberFormat(['ban', 'id']).format(res);
+    function successNotify(res, resB) {
+        var nilai = new Intl.NumberFormat(['ban', 'id']).format(res.tot);
+        var order = res.order;
         Swal.fire({
+            title: "Total Harga : Rp" + nilai,
             icon: 'success',
-            title: "Total Harga Rp" + nilai,
-            showConfirmButton: false,
-            timer: 1500
+            text: "Nomor Pesanan : " + order,
+            button: "Ok ",
         })
     }
 </script>

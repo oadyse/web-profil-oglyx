@@ -23,6 +23,7 @@ Route::get('/', function () {
 Route::get('produk', [HomeController::class, 'index'])->name('daftar-produk');
 Route::get('produkdetail/{id}', [HomeController::class, 'detail'])->name('detail-produk');
 Route::post('tambah_pesanan', [pesananController::class, 'addPesanan']);
+Route::get('/search', [HomeController::class, 'search'])->name('search');
 
 Auth::routes([
     'register' => false,
@@ -30,4 +31,5 @@ Auth::routes([
 Route::group(['middleware' => 'auth'], function () {
     Route::get('admin', [DashboardController::class, 'index'])->name('menu-dashboard');
     Route::get('detail/{id}', [DashboardController::class, 'detail']);
+    Route::post('status/{id}', [DashboardController::class, 'changeStatus'])->name('status');
 });

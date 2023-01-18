@@ -15,9 +15,12 @@ class CreateTabelPemesanan extends Migration
     {
         Schema::create('tabel_pemesanan', function (Blueprint $table) {
             $table->id();
+            $table->string('no_order');
             $table->string('nama');
-            $table->bigInteger('no_wa');
+            $table->string('no_wa');
             $table->text('alamat');
+            $table->enum('status', ['Belum Proses', 'Proses', 'Selesai']);
+            $table->timestamps();
         });
     }
 

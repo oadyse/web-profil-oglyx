@@ -9,21 +9,10 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
     }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
 
     public function index()
     {
@@ -38,9 +27,22 @@ class DashboardController extends Controller
     {
         $data = [
             'details' => M_detailPemesanan::getDetail($id),
-            'totals' => M_detailTotalPemesanan::getTotal($id)
+            'totals' => M_detailTotalPemesanan::getTotal($id),
+            'pesanan' => M_pemesanan::where('id', $id)->first()
         ];
         // dd($data['totals']);
         return view('detail', $data);
+    }
+
+    public function changeStatus(Request $request, $id)
+    {
+        $process = M_pemesanan::findOrFail($id)->update([
+            'status' => $request->status,
+        ]);
+        if ($process) {
+            return redirect()->back()->with("successUpdate", "Data updated successfully");
+        } else {
+            return redirect()->back()->withInput()->withErrors("Terjadi kesalahan");
+        }
     }
 }

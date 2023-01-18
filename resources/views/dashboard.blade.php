@@ -7,9 +7,11 @@
                 <nav class="navbar navbar-expand-lg navbar-light p-0">
                     <div class="side-menu-bt-sidebar">
                         <h4>
-                            <a href="{{ url('/') }}"><img src="assets/img/Logo.png" alt="" class="img-fluid"
-                                    width="35px">
-                                &nbsp; UD. Oglyx Pandiga</a>
+                            <h4>
+                                <a href="{{ url('/') }}"><img src="{{ asset('dashboard') }}/assets/images/Logo.png"
+                                        alt="" class="img-fluid" width="35px">
+                                    &nbsp; UD. Oglyx Pandiga</a>
+                            </h4>
                         </h4>
                     </div>
                     <div class="d-flex align-items-center">
@@ -77,8 +79,10 @@
                                         <thead>
                                             <tr>
                                                 <th width="5%">No.</th>
+                                                <th width="15%">Tanggal Pesan</th>
                                                 <th>Pemesan</th>
-                                                <th>Order</th>
+                                                <th>Status</th>
+                                                <th width="15%">Order</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -88,13 +92,16 @@
                                             ?>
                                             <tr>
                                                 <td class="text-center">{{ $no }}.</td>
+                                                <td>{{ date('d-m-Y', strtotime($order->created_at)) }}</td>
                                                 <td>
                                                     <ul>
+                                                        <li>{{ 'No-Order       : ' . $order->no_order }}</li>
                                                         <li>{{ 'Nama           : ' . $order->nama }}</li>
                                                         <li>{{ 'Nomor WhatsApp : ' . $order->no_wa }}</li>
                                                         <li>{{ 'Alamat         : ' . $order->alamat }}</li>
                                                     </ul>
                                                 </td>
+                                                <td>{{ $order->status }}</td>
                                                 <td>
                                                     <a class="btn btn-success" href="/detail/{{ $order->id }}">
                                                         Detail Pesanan

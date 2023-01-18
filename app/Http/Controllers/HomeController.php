@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\M_pemesanan;
+use App\Models\M_detailPemesanan;
+use App\Models\M_detailTotalpemesanan;
 use App\Models\M_produk;
 use Illuminate\Http\Request;
 
@@ -13,7 +16,6 @@ class HomeController extends Controller
         $data = [
             'produks' => M_produk::all(),
         ];
-        // $data['produks'];
         return view('produk', $data);
     }
 
@@ -28,5 +30,13 @@ class HomeController extends Controller
             'produk' => M_produk::where('id', $id)->first(),
         ];
         return view('produk_detail', $data);
+    }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->search;
+        $data = M_pemesanan::where('no_order', 'like', "%" . $keyword . "%")->paginate();
+        // $details = M_detailPemesanan::getDetail($data->id);
+        return view('cek_pesanan', compact('keyword', 'data'));
     }
 }
