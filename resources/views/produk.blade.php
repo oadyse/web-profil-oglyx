@@ -48,8 +48,6 @@
                                     <div class="mb-3">
                                         <label class="form-label">Nomor (WhatsApp)</label>
                                         <input type="text" name="no_wa" class="form-control" required>
-                                        <input type="hidden" name="no_order" class="form-control"
-                                            value="{{ 'OP-BW' . date('dmis') }}">
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Alamat</label>

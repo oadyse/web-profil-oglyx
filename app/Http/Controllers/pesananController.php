@@ -17,7 +17,7 @@ class pesananController extends Controller
         $harga = $request->get('harga');
 
         $data = new M_pemesanan();
-        $data->no_order = $request->get('no_order');
+        $data->no_order = 'OP-BW' . date('s') . rand(1111, 9999);
         $data->nama = $request->get('nama');
         $data->no_wa = $request->get('no_wa');
         $data->alamat = $request->get('alamat');
