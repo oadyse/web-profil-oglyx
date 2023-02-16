@@ -17,8 +17,9 @@ class CreateProduk extends Migration
             $table->id();
             $table->string('nama');
             $table->string('harga');
+            $table->integer('stok');
             $table->longText('deskripsi');
-            $table->string('gambar');
+            $table->string('gambar')->nullable();
             $table->timestamps();
         });
     }

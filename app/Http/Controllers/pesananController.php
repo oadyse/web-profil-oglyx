@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\M_detailPemesanan;
 use App\Models\M_detailTotalPemesanan;
 use App\Models\M_pemesanan;
+use App\Models\M_produk;
 use Illuminate\Http\Request;
 
 class pesananController extends Controller
@@ -47,6 +48,12 @@ class pesananController extends Controller
                         'id_pemesanan' => $data->id,
                         'total' => $key,
                         'harga' => $total_harga
+                    ]);
+
+                    $stok = M_produk::where('id', $id_produk)->first()->stok;
+
+                    M_produk::where('id', $id_produk)->update([
+                        'stok' => $stok - $key,
                     ]);
                 }
             }

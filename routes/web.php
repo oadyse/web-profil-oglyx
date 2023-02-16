@@ -29,7 +29,11 @@ Auth::routes([
     'register' => false,
 ]);
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('admin', [DashboardController::class, 'index'])->name('menu-dashboard');
-    Route::get('detail/{id}', [DashboardController::class, 'detail']);
+    Route::get('admin/daftar_pesanan', [DashboardController::class, 'index'])->name('menu-dashboard');
+    Route::get('admin/daftar_pesanan/detail/{id}', [DashboardController::class, 'detail'])->name('detail-pesanan');
+    Route::get('admin/daftar_produk', [DashboardController::class, 'produk'])->name('menu-produk');
+    Route::post('admin/daftar_produk/add', [DashboardController::class, 'addNew'])->name('add');
+    Route::post('admin/daftar_produk/edit/{id}', [DashboardController::class, 'processUpdate'])->name('edit');
+    Route::get('admin/daftar_produk/delete/{id}', [DashboardController::class, 'delete'])->name('delete');
     Route::post('status/{id}', [DashboardController::class, 'changeStatus'])->name('status');
 });

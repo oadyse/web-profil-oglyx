@@ -10,7 +10,7 @@
         @if (empty(Auth::user()->name))
             <li><a class="nav-link scrollto bg-dark" href="{{ url('login') }}">Login</a></li>
         @else
-            <li><a class="nav-link scrollto bg-dark" href="{{ url('admin') }}">Dashboard</a></li>
+            <li><a class="nav-link scrollto bg-dark" href="{{ route('menu-dashboard') }}">Dashboard</a></li>
         @endif
     </ul>
     <i class="bi bi-list mobile-nav-toggle"></i>

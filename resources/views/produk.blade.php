@@ -129,12 +129,11 @@
                     @if (strpos($produk->nama, 'Benih') !== false)
                         <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                             <div class="portfolio-wrap" style="height: 200px">
-                                <img src="assets/img/gambarproduk/{{ $produk->gambar }}" class="img-fluid"
+                                <img src="dokumen/produk/{{ $produk->gambar }}" class="img-fluid"
                                     alt="{{ $produk->nama }}">
                                 <div class="portfolio-links">
-                                    <a href="assets/img/gambarproduk/{{ $produk->gambar }}"
-                                        data-gallery="portfolioGallery" class="portfolio-lightbox"
-                                        title="{{ $produk->nama }}">
+                                    <a href="dokumen/produk/{{ $produk->gambar }}" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox" title="{{ $produk->nama }}">
                                         <i class="bx bx-plus"></i>
                                     </a>
                                     <a href="{{ url('produkdetail/' . $produk->id) }}" title="More Details"><i
@@ -145,12 +144,11 @@
                     @else
                         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                             <div class="portfolio-wrap" style="height: 200px">
-                                <img src="assets/img/gambarproduk/{{ $produk->gambar }}" class="img-fluid"
+                                <img src="dokumen/produk/{{ $produk->gambar }}" class="img-fluid"
                                     alt="{{ $produk->nama }}">
                                 <div class="portfolio-links">
-                                    <a href="assets/img/gambarproduk/{{ $produk->gambar }}"
-                                        data-gallery="portfolioGallery" class="portfolio-lightbox"
-                                        title="{{ $produk->nama }}">
+                                    <a href="dokumen/produk/{{ $produk->gambar }}" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox" title="{{ $produk->nama }}">
                                         <i class="bx bx-plus"></i>
                                     </a>
                                     <a href="{{ url('produkdetail/' . $produk->id) }}" title="More Details"><i
