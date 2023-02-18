@@ -36,6 +36,7 @@ class HomeController extends Controller
     {
         $keyword = $request->search;
         $data = M_pemesanan::where('no_order', '=', $keyword)->paginate();
-        return view('cek_pesanan', compact('keyword', 'data'));
+        $cek = M_pemesanan::where('no_order', '=', $keyword)->first();
+        return view('cek_pesanan', compact('keyword', 'data', 'cek'));
     }
 }
