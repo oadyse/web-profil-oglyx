@@ -59,21 +59,23 @@
                                     </div>
                                     @foreach ($produks as $produk)
                                         <div class="row mb-3 mx-auto">
-                                            <div class="col-9 my-auto">
+                                            <div class="col-8 my-auto">
                                                 <label class="form-label">
                                                     <small>
                                                         {{ $produk->nama }} <br>
                                                         <span style="color: brown;">
                                                             ({{ 'Rp ' . number_format($produk->harga, 0, ',', '.') . '/ton' }})
                                                         </span>
+                                                        <small>Stok : {{ $produk->stok }}</small>
                                                     </small>
                                                     <input type="hidden" name="harga[]" value="{{ $produk->harga }}" />
                                                 </label>
                                             </div>
-                                            <div class="col-2 text-center">
+                                            <div class="col-3 text-center">
                                                 <input type="hidden" name="id_produk[]" value="{{ $produk->id }}" />
-                                                <input type="number" id="total" min="0" name="total[]"
-                                                    class="form-control" placeholder="0">
+                                                <input type="number" id="total" min="0"
+                                                    max="{{ $produk->stok }}" name="total[]" class="form-control"
+                                                    placeholder="0">
                                             </div>
                                             <div class="col-1">
                                                 <small>ton</small>
@@ -103,7 +105,7 @@
                                 <form class="form" action="{{ route('search') }}" method="get">
                                     <div class="form-group">
                                         <input type="text" name="search" class="form-control" id="search"
-                                            placeholder="Masukkan no-order" value="{{ old('search') }}">
+                                            placeholder="Masukkan no-order" value="{{ old('search') }}" required>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-primary">Cari</button>

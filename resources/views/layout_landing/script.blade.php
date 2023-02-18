@@ -50,7 +50,7 @@
         Swal.fire({
             title: "Total Harga : Rp" + nilai,
             icon: 'success',
-            text: "Nomor Pesanan : " + order,
+            text: "Nomor Pesanan :  `" + order,
             button: "Ok ",
         })
     }
