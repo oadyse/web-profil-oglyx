@@ -127,50 +127,44 @@
 
             <div class="section-title" data-aos="fade-in" data-aos-delay="100">
                 <h2>Capaian</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                    fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <p>Berikut adalah beberapa dari capaian yang pernah diraih dan diikutsertakan Oglyx Pandiga kepada
+                    institusi terkait.</p>
             </div>
 
             <div class="row">
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up">
-                        <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                        <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                            excepturi</p>
+                        <div class="mb-3 mt-2 text-center">
+                            <img src="assets/img/nganjuk.png" width="100" alt="">
+                        </div>
+                        <h4 class="title"><a href="">Penghasil bawang merah terbesar </a></h4>
+                        <p class="description">Membantu pemerintah nganjuk dalam menghasilkan bawang merah terbesar di
+                            Jawa Timur pada tahun 2020</p>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon"><i class="bx bx-file"></i></div>
-                        <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                            dolore</p>
+                        <div class="mb-1 text-center">
+                            <img src="assets/img/asean.png" width="200" alt="">
+                        </div>
+                        <h4 class="title"><a href="">5.600Ton Ekspor Bawang Merah</a></h4>
+                        <p class="description">Menjadi salah satu perusahaan yang ikut serta dalam program ekspor bawang
+                            merah ke beberapa negara Asean pada tahun 2018</p>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon"><i class="bx bx-tachometer"></i></div>
-                        <h4 class="title"><a href="">Magni Dolores</a></h4>
-                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                            officia
+                        <div class="mb-4 mt-4 text-center">
+                            <img src="assets/img/nasional.jpg" width="150" alt="">
+                        </div>
+                        <h4 class="title"><a href="">Memasok 10% Bawang Merah Nasional</a></h4>
+                        <p class="description">Oglyx Pandiga mendapat kepercayaan dari pemerintah untuk menjadi salah
+                            satu perusahaan di Nganjuk yang memasok 9,8% bawang merah siap konsumsi nasional.
                         </p>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                        <div class="icon"><i class="bx bx-world"></i></div>
-                        <h4 class="title"><a href="">Nemo Enim</a></h4>
-                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                            blanditiis
-                        </p>
-                    </div>
-                </div>
-
             </div>
 
         </div>
