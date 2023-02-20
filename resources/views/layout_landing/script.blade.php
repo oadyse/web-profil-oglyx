@@ -35,6 +35,7 @@
                     $('#pemesanan').modal('hide')
                     successNotify(response)
                     $('#form-pesanan')[0].reset()
+                    location.reload();
                 }
                 // cosole.log(response)
             },
@@ -50,7 +51,7 @@
         Swal.fire({
             title: "Total Harga : Rp" + nilai,
             icon: 'success',
-            text: "Nomor Pesanan :  `" + order,
+            text: "Nomor Pesanan :  " + order,
             button: "Ok ",
         })
     }

@@ -15,10 +15,10 @@ class CreateDetailTotalPemesanan extends Migration
     {
         Schema::create('detail_total_pemesanan', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_pemesanan');
+            $table->foreignId('id_pemesanan')->nullable()->references('id')->on('tabel_pemesanan');
             $table->integer('total');
             $table->biginteger('harga');
-            $table->foreign('id_pemesanan')->references('id')->on('tabel_pemesanan')->onDelete('cascade')->onUpdate('cascade');
+            $table->timestamps();
         });
     }
 

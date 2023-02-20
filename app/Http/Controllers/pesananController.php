@@ -12,7 +12,6 @@ class pesananController extends Controller
 {
     public function addPesanan(Request $request)
     {
-        // dd(request()->all());
         $id_produk = $request->get('id_produk');
         $total = $request->get('total');
         $harga = $request->get('harga');
@@ -34,29 +33,25 @@ class pesananController extends Controller
         }
         $tot = 0;
         foreach ($total as $t => $key) {
-            foreach ($harga as $h => $val) {
-                if ($t == $h) {
-                    if ($key == null) {
-                        $key = 0;
-                    } else {
-                        $key = $key;
-                    }
-                    $total_harga = $key * $val;
-                    $tot += $total_harga;
-
-                    M_detailTotalPemesanan::create([
-                        'id_pemesanan' => $data->id,
-                        'total' => $key,
-                        'harga' => $total_harga
-                    ]);
-
-                    $stok = M_produk::where('id', $id_produk)->first()->stok;
-
-                    M_produk::where('id', $id_produk)->update([
-                        'stok' => $stok - $key,
-                    ]);
-                }
+            if ($key == null) {
+                $key = 0;
+            } else {
+                $key = $key;
             }
+            $total_harga = $key * $harga[$t];
+            $tot += $total_harga;
+
+            M_detailTotalPemesanan::create([
+                'id_pemesanan' => $data->id,
+                'total' => $key,
+                'harga' => $total_harga
+            ]);
+
+            $stok = M_produk::where('id', $id_produk[$t])->first()->stok;
+
+            M_produk::where('id', $id_produk[$t])->update([
+                'stok' => $stok - $key,
+            ]);
         }
         // dd($tot);
         return response()->json(['tot' => $tot, 'order' => $data->no_order]);

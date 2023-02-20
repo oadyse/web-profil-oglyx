@@ -15,10 +15,9 @@ class CreateDetailPemesanan extends Migration
     {
         Schema::create('detail_pemesanan', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_pemesanan');
-            $table->unsignedBigInteger('id_produk');
-            $table->foreign('id_pemesanan')->references('id')->on('tabel_pemesanan')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('id_produk')->references('id')->on('produk')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('id_pemesanan')->nullable()->references('id')->on('tabel_pemesanan');
+            $table->foreignId('id_produk')->nullable()->references('id')->on('produk');
+            $table->timestamps();
         });
     }
 
