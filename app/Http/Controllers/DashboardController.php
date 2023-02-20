@@ -91,7 +91,7 @@ class DashboardController extends Controller
                 return redirect()->back()->withErrors("Terjadi kesalahan saat menghapus data");
             }
         } catch (\Exception $e) {
-            abort(404);
+            return view('dashboard.error');
         }
     }
 
