@@ -82,8 +82,7 @@
                             <div class="swiper-wrapper align-items-center">
 
                                 <div class="swiper-slide">
-                                    <img src="{{ asset('assets') }}/img/gambarproduk/{{ $produk->gambar }}"
-                                        alt="">
+                                    <img src="{{ asset('dokumen') }}/produk/{{ $produk->gambar }}" alt="">
                                 </div>
 
 
